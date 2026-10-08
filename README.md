@@ -1,5 +1,3 @@
-# women-in-drug-research-and-safety'
-
 # Women in Drug Research and Safety
 
 Data Engineering (University of Tartu, fall 2026), Project 1: data architecture and modelling.
@@ -26,7 +24,6 @@ sql/
   pseudo_queries.sql     SQL answering the five business questions
 scripts/
   download_fda.py        pulls recent FAERS reports, flattened to the fact grain
-  download_ctgov.py      pulls interventional drug/biological trials
 sample_data/             small samples produced by the two scripts
 ```
 
