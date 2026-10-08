@@ -23,8 +23,6 @@ Both sources are record-level (not pre-aggregated). The two are linked through `
 
 ```
 sql/
-  create_tables.sql      DDL for the star schema (PostgreSQL)
-  seed_dimensions.sql    DML that fills the static dimensions (dates, patient profiles)
   pseudo_queries.sql     SQL answering the five business questions
 scripts/
   download_fda.py        pulls recent FAERS reports, flattened to the fact grain
@@ -101,8 +99,6 @@ erDiagram
 
 ```bash
 createdb drug_safety
-psql -d drug_safety -f sql/create_tables.sql
-psql -d drug_safety -f sql/seed_dimensions.sql
 psql -d drug_safety -f sql/pseudo_queries.sql   # returns empty results until the facts are loaded
 ```
 
