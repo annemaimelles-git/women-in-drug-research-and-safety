@@ -26,9 +26,11 @@ FROM bridge_trial_condition b
 JOIN dim_condition c USING (condition_key)
 JOIN dim_trial t ON t.nct_id = b.nct_id AND t.is_current
 GROUP BY 1
-HAVING COUNT(DISTINCT t.nct_id) >= 20      -- ignore rarely studied conditions
+HAVING COUNT(DISTINCT t.nct_id) >= 1      
 ORDER BY open_to_women_pct ASC, trials DESC
 LIMIT 20;
+-- Note: conditions that only affect men (e.g. prostate cancer) rank lowest
+-- for biological reasons; exclude them before drawing conclusions.
 
 
 -- Q3. Drugs with the highest female share of adverse event reports
